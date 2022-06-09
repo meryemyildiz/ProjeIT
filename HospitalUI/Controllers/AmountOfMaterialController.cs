@@ -16,7 +16,7 @@ namespace HospitalUI.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var x = aom.GetList().Where(a=>a.AmountStatus==true).ToList();
+            var x = aom.GetList();
             return View(x);
         }
         [HttpGet]

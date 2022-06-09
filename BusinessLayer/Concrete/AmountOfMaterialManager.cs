@@ -40,8 +40,8 @@ namespace BusinessLayer.Concrete
 
         public List<AmountOfMaterial> GetList()
         {
-           
-            return _amountOfMaterialDal.List();
+
+            return _amountOfMaterialDal.List().Where(a => a.AmountStatus == true).ToList();
         }
     }
 }
