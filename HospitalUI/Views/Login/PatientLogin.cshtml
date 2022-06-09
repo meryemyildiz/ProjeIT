@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>HOSPİTAL USER LOGIN</title>
+
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/snow-login-form-starter/css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+    <!-- login form -->
+    <section class="w3l-login">
+        <div class="overlay">
+            <div class="wrapper">
+                <div class="logo">
+                    
+                </div>
+                <div class="form-section">
+                    <h3>KULLANICI GİRİŞİ</h3>
+
+                    @using (Html.BeginForm("Index", "Patient", FormMethod.Post))
+                    {
+                        <div class="form-input">
+                            <input type="text" name="Username" placeholder="Username" required="" autofocus>
+                        </div>
+                        <div class="form-input">
+                            <input type="password" name="password" placeholder="Password" required="">
+                        </div>
+                        <label class="check-remaind">
+                            <input type="checkbox">
+                        </label>
+                        <button type="submit" class="btn btn-primary theme-button mt-4">GİRİŞ</button>
+                    }
+                    </div>
+            </div>
+        </div>
+          <div id='stars'></div>
+           <div id='stars2'></div>
+           <div id='stars3'></div>
+
+    </section>
+
+    <!-- /login form -->
+</body>
+
+</html>

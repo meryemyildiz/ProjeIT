@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.TypesOfCancer
+@{
+    ViewBag.Title = "UpdateTypeOfCancer";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("UpdateTypeOfCancer", "TypeOfCancer", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.CancerId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CancerId)
+        <br />
+        @Html.Label("Kanser türü")
+        @Html.TextBoxFor(x => x.CancerName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CancerName)
+        <br /><br />
+        <button class="btn btn-success">GÜNCELLE</button>
+
+    </div>
+}
+
+

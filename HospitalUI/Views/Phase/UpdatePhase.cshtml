@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Phase
+@{
+    ViewBag.Title = "UpdatePhase";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("UpdatePhase", "Phase", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.PhaseId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PhaseId)
+        <br />
+        @Html.Label("Evre")
+        @Html.TextBoxFor(x => x.phaseName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.phaseName)
+        <br /><br />
+        <button class="btn btn-success">GÜNCELLE</button>
+
+    </div>
+}
+

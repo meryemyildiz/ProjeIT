@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Concrete
+@model List<TypeOfTube>
+@{
+    Layout = null;
+}
+<h3>Materyal Tipi Sayfası</h3>
+<br />
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>TÜP CİNSİ</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.TubeId</td>
+            <td>@item.TubeName</td>
+            <td><a href="/Deneme/Delete/@item.TubeId" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Deneme/Update/@item.TubeId" class="btn btn-warning">GÜNCELLE</a></td>
+         </tr>
+    }
+</table>
+<a href="/Deneme/Add" class="btn btn-info">Yeni Tüp Girişi</a>

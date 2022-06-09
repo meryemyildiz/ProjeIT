@@ -1,0 +1,23 @@
+﻿@model  EntityLayer.Concrete.AmountOfMaterial
+@{
+    ViewBag.Title = "UpdateAmountOfMaterial";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("UpdateAmountOfMaterial", "AmountOfMaterial", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.AmountId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AmountId)
+        <br />
+        @Html.Label("Tüp Cinsi")
+        @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Amount)
+        <br /><br />
+        <button class="btn btn-success">GÜNCELLE</button>
+
+    </div>
+}

@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.Sponsor
+@{
+    ViewBag.Title = "UpdateSponsor";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("UpdateSponsor", "Sponsor", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.SponsorId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SponsorId)
+        <br />
+        @Html.Label("Sponsor Adı")
+        @Html.TextBoxFor(x => x.SponsorName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SponsorName)
+        <br /><br />
+        <button class="btn btn-success">GÜNCELLE</button>
+
+    </div>
+}

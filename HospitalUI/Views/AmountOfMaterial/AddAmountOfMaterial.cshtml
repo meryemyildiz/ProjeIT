@@ -1,0 +1,19 @@
+﻿@model EntityLayer.Concrete.AmountOfMaterial
+@{
+    ViewBag.Title = "AddAmountOfMaterial";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddAmountOfMaterial", "AmountOfMaterial", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Materyal Miktarı")
+        @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Amount)
+        <button class="btn btn-info">Kaydet</button>
+
+    </div>
+}
+

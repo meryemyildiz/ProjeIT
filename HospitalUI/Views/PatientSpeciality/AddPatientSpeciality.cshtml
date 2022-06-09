@@ -1,0 +1,19 @@
+﻿@model EntityLayer.Concrete.PatientSpeciality
+@{
+    ViewBag.Title = "AddPatientSpeciality";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Hasta Uzmanlık Ekleme Sayfası</h3>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddPatientSpeciality", "PatientSpeciality", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Hasta Uzmanlık")
+        @Html.TextBoxFor(x => x.SpecialityName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SpecialityName)
+        <button class="btn btn-info">Kaydet</button>
+
+    </div>
+}

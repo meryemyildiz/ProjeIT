@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concrete
+@model List<Phase>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Evreler Sayfası</h3>
+<br />
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Evre Türü</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PhaseId</td>
+            <td>@item.phaseName</td>
+            <td><a href="/Phase/DeletePhase/@item.PhaseId" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Phase/UpdatePhase/@item.PhaseId" class="btn btn-warning">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+<a href="/Phase/AddPhase" class="btn btn-info">Yeni Evre Girişi</a>
+
+

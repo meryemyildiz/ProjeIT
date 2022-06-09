@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model List<ProjectName>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Proje Bilgileri</h3>
+<br />
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Proje Adı</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.NameId</td>
+            <td>@item.ProName</td>
+            <td><a href="/ProjectName/DeleteProjectName/@item.NameId" class="btn btn-danger">SİL</a></td>
+            <td><a href="/ProjectName/UpdateProjectName/@item.NameId" class="btn btn-warning">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+<a href="/ProjectName/AddProjectName" class="btn btn-info">Yeni Proje Girişi</a>
+
+
+

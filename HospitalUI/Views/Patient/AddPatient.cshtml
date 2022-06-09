@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.Patient
+@{
+    ViewBag.Title = "AddPatient";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddPatient", "Patient", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Kullanıcı Mail")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.UserName)
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Password)
+    @Html.Label("Proje ID")
+    @Html.TextBoxFor(x => x.ProjeId, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ProjeId)
+    @Html.Label("Rol")
+    @Html.TextBoxFor(x => x.Role, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Role)
+    <button class="btn btn-info">Kaydet</button>
+
+</div>
+}
+

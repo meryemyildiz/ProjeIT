@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concrete.TypeOfTube
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("Update", "Deneme", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("ID")
+    @Html.TextBoxFor(x => x.TubeId, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.TubeId)
+    <br />
+    @Html.Label("Tüp Cinsi")
+    @Html.TextBoxFor(x => x.TubeName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.TubeName)
+    <br /><br />
+    <button class="btn btn-success">GÜNCELLE</button>
+
+</div>
+}

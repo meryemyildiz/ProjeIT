@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.TypesOfCancer
+@{
+    ViewBag.Title = "AddTypeOfCancer";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddTypeOfCancer", "TypeOfCancer", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kanser Türü")
+        @Html.TextBoxFor(x => x.CancerName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CancerName)
+        <button class="btn btn-info">Kaydet</button>
+
+    </div>
+}

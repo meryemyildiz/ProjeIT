@@ -1,0 +1,19 @@
+﻿@model EntityLayer.Concrete.TypeOfTube
+@{
+    ViewBag.Title = "AddTube";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddTube", "TypeOfTube", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Tüp Cinsi")
+        @Html.TextBoxFor(x => x.TubeName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TubeName)
+        <button class="btn btn-info">Kaydet</button>
+
+    </div>
+}
+

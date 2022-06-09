@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.ProjectType 
+@{
+    ViewBag.Title = "AddProjectType";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddProjectType", "ProjectType", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Proje Türü")
+        @Html.TextBoxFor(x => x.ProType, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProType)
+        <button class="btn btn-info">Kaydet</button>
+
+    </div>
+}

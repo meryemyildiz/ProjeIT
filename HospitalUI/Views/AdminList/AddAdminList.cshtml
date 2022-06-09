@@ -1,0 +1,95 @@
+﻿@model EntityLayer.Concrete.AdminList
+@{
+    ViewBag.Title = "AddAdminList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddAdminList", "AdminList", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Id)
+        <br />
+        @Html.Label("Proje Adı")
+        @Html.DropDownListFor(x => x.NameId, (List<SelectListItem>)ViewBag.vpn, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProjectName)
+        <br />
+        @Html.Label("Proje Türü")
+        @Html.DropDownListFor(x => x.ProjectTypeId, (List<SelectListItem>)ViewBag.vpt, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProjectType)
+        <br />
+        @Html.Label("Proje Durumu")
+        @Html.DropDownListFor(x => x.StatusId, (List<SelectListItem>)ViewBag.vpstm, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProjectStatus)
+        <br />
+
+        @Html.Label("Sponsor Adı")
+        @Html.DropDownListFor(x => x.SponsorId, (List<SelectListItem>)ViewBag.vsm, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Sponsor)
+        <br />
+
+        @Html.Label("Hasta Uzmanlık")
+        @Html.DropDownListFor(x => x.PSpecialityId, (List<SelectListItem>)ViewBag.vpsm, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PatientSpeciality)
+        <br />
+
+        @Html.Label("Kanser Türü")
+        @Html.DropDownListFor(x => x.CancerId, (List<SelectListItem>)ViewBag.vtcm, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TypesOfCancer)
+        <br />
+
+        @Html.Label("Materyal Tipi")
+        @Html.DropDownListFor(x => x.MaterialId, (List<SelectListItem>)ViewBag.vtmm, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TypeOfMaterial)
+        <br />
+       
+        @Html.Label("Materyal Miktarı")
+        @Html.DropDownListFor(x => x.AmountId, (List<SelectListItem>)ViewBag.vaom, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AmountOfMaterial)
+        <br />
+
+        @Html.Label("Tüp Cinsi")
+        @Html.DropDownListFor(x => x.TubeId, (List<SelectListItem>)ViewBag.vttm, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TypeOfTube)
+        <br />
+
+        @Html.Label("Evre")
+        @Html.DropDownListFor(x => x.PhaseId, (List<SelectListItem>)ViewBag.vpm, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Phase)
+        <br />
+
+        @Html.Label("Kota")
+        @Html.TextBoxFor(x => x.Kota, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Id)
+        <br />
+
+        @Html.Label("Gelen Hasta Sayısı")
+        @Html.TextBoxFor(x => x.İncoming, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Id)
+        <br />
+
+        @Html.Label("Giden Hasta Sayısı")
+        @Html.TextBoxFor(x => x.Going, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Id)
+        <br />
+
+        @Html.Label("Kalan Hasta")
+        @Html.TextBoxFor(x => x.Remainder, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Id)
+        <br />
+
+        @Html.Label("Başlangıç Tarihi")
+        @Html.TextBoxFor(x => x.StaringDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Id)
+        <br />
+
+        @Html.Label("Bitiş Tarihi")
+        @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Id)
+        <br />
+
+        <button class="btn btn-info">Proje OLuştur</button>
+
+    </div>
+}

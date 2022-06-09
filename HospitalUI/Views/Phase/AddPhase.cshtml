@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.Phase
+@{
+    ViewBag.Title = "AddPhase";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddPhase", "Phase", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Evre")
+        @Html.TextBoxFor(x => x.phaseName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.phaseName)
+        <button class="btn btn-info">Kaydet</button>
+
+    </div>
+}

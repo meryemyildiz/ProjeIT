@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concrete
+@model List<PatientSpeciality>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Hasta Uzmanlık Sayfası</h3>
+<br />
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Hasta Uzmanlık</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.PSpecialityId</td>
+            <td>@item.SpecialityName</td>
+            <td><a href="/PatientSpeciality/DeletePatientSpeciality/@item.PSpecialityId" class="btn btn-danger">SİL</a></td>
+            <td><a href="/PatientSpeciality/UpdatePatientSpeciality/@item.PSpecialityId" class="btn btn-warning">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+<a href="/PatientSpeciality/AddPatientSpeciality" class="btn btn-info">Yeni Hasta Uzmanlık Girişi</a>
+

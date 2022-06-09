@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.ProjectName
+@{
+    ViewBag.Title = "UpdateProjectName";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("UpdateProjectName", "ProjectName", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.NameId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.NameId)
+        <br />
+        @Html.Label("Tüp Cinsi")
+        @Html.TextBoxFor(x => x.ProName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProName)
+        <br /><br />
+        <button class="btn btn-success">GÜNCELLE</button>
+
+    </div>
+}
+
+
+

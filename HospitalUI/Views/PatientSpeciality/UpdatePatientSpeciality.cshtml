@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.PatientSpeciality
+@{
+    ViewBag.Title = "UpdatePatientSpeciality";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("UpdatePatientSpeciality", "PatientSpeciality", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.PSpecialityId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PSpecialityId)
+        <br />
+        @Html.Label("Tüp Cinsi")
+        @Html.TextBoxFor(x => x.SpecialityName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SpecialityName)
+        <br /><br />
+        <button class="btn btn-success">GÜNCELLE</button>
+
+    </div>
+}

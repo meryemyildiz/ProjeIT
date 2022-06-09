@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model List<TypesOfCancer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Kanser Türleri Sayfası</h3>
+<br />
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Kanser Adı</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CancerId</td>
+            <td>@item.CancerName</td>
+            <td><a href="/TypeOfCancer/DeleteTypeOfCancer/@item.CancerId" class="btn btn-danger">SİL</a></td>
+            <td><a href="/TypeOfCancer/UpdateTypeOfCancer/@item.CancerId" class="btn btn-warning">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+<a href="/TypeOfCancer/AddTypeOfCancer" class="btn btn-info">Yeni Kanser Türü Girişi</a>
+
+
+

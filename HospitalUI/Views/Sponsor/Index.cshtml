@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model List<Sponsor>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Sponsor Sayfası</h3>
+<br />
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Sponsor Adı</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SponsorId</td>
+            <td>@item.SponsorName</td>
+            <td><a href="/Sponsor/DeleteSponsor/@item.SponsorId" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Sponsor/UpdateSponsor/@item.SponsorId" class="btn btn-warning">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+<a href="/Sponsor/AddSponsor" class="btn btn-info">Yeni Sponsor Girişi</a>
+
+
+

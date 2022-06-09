@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.TypeOfMaterial
+@{
+    ViewBag.Title = "AddTypeOfMaterial";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddTypeOfMaterial", "TypeOfMaterial", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Materyal Tipi")
+        @Html.TextBoxFor(x => x.MaterialName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MaterialName)
+        <button class="btn btn-info">Kaydet</button>
+
+    </div>
+}

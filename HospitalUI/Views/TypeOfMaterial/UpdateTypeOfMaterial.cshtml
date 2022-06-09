@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.TypeOfMaterial
+@{
+    ViewBag.Title = "UpdateTypeOfMaterial";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@using (Html.BeginForm("UpdateTypeOfMaterial", "TypeOfMaterial", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.MaterialId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MaterialId)
+        <br />
+        @Html.Label("Tüp Cinsi")
+        @Html.TextBoxFor(x => x.MaterialName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MaterialName)
+        <br /><br />
+        <button class="btn btn-success">GÜNCELLE</button>
+
+    </div>
+}

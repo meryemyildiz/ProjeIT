@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete
+@model List<TypeOfMaterial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Materyal Tipi Sayfası</h3>
+<br />
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Materyal Tipi</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaterialId</td>
+            <td>@item.MaterialName</td>
+            <td><a href="/TypeOfMaterial/DeleteTypeOfMaterial/@item.MaterialId" class="btn btn-danger">SİL</a></td>
+            <td><a href="/TypeOfMaterial/UpdateTypeOfMaterial/@item.MaterialId" class="btn btn-warning">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+<a href="/TypeOfMaterial/AddTypeOfMaterial" class="btn btn-info">Yeni Materyal Tipi Girişi</a>
+

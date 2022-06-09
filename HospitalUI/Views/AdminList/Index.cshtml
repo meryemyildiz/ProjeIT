@@ -1,0 +1,57 @@
+﻿@using EntityLayer.Concrete
+@model List<AdminList>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Admin Sayfası</h2>
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Proje Adı</th>
+        <th>Proje Durumu</th>
+        <th>Proje Türü</th>
+        <th>Hasta Uzmanlık</th>
+        <th>Kanser Türü</th>
+        <th>Evre</th>
+        <th>Materyal Tipi</th>
+        <th>Materyal Miktarı</th>
+        <th>Tüp Tipi</th>
+        <th>Başlangç Tarihi</th>
+        <th>Bitiş Tarihi</th>
+        <th>Kota</th>
+        <th>Gelen</th>
+        <th>Giden</th>
+        <th>Kalan</th>
+        <th>Sponsor</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.ProjectName.ProName</td>
+    <td>@item.ProjectStatus.ProStatus</td>
+    <td>@item.ProjectType.ProType</td>
+    <td>@item.PatientSpeciality.SpecialityName</td>
+    <td>@item.TypesOfCancer.CancerName</td>
+    <td>@item.Phase.phaseName</td>
+    <td>@item.TypeOfMaterial.MaterialName</td>
+    <td>@item.AmountOfMaterial.Amount</td>
+    <td>@item.TypeOfTube.TubeName</td>
+    <td>@item.StaringDate</td>
+    <td>@item.EndDate</td>
+    <td>@item.Kota</td>
+    <td>@item.İncoming</td>
+    <td>@item.Going</td>
+    <td>@item.Remainder</td>
+    <td>@item.Sponsor.SponsorName</td>
+    <td><a href="/AdminList/DeleteAdminList/@item.Id" class="btn btn-danger">SİL</a></td>
+    <td><a href="/AdminList/UpdateAdminList/@item.Id" class="btn btn-warning">GÜNCELLE</a></td>
+</tr>
+    }
+</table>
+<a href="/AdminList/AddAdminList" class="btn btn-info">Yeni Hasta Girişi</a>
+<br />
+<a href="/Patient/AddPatient" class="btn btn-info">Hasta Bilgileri Girişi</a>

@@ -1,0 +1,49 @@
+﻿@using EntityLayer.Concrete
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/PatientLayout.cshtml";
+}
+
+<table class="table table-hover">
+    <tr>
+       <th>Id</th>
+        <th>Proje Adı</th>
+        <th>Proje Durumu</th>
+        <th>Proje Türü</th>
+        <th>Hasta Uzmanlık</th>
+        <th>Kanser Türü</th>
+        <th>Evre</th>
+        <th>Materyal Tipi</th>
+        <th>Materyal Miktarı</th>
+        <th>Tüp Tipi</th>
+       
+        <th>Kota</th>
+        <th>Gelen</th>
+        <th>Giden</th>
+        <th>Kalan</th>
+        <th>Sponsor</th>
+
+    </tr>
+    @foreach (PatientDTO item in ViewBag.ListOfPatient)
+    {
+        <tr>
+           <td>@item.Id</td>
+            <td>@item.ProName</td>
+            <td>@item.ProStatus</td>
+            <td>@item.ProType</td>
+            <td>@item.SpecialityName</td>
+            <td>@item.CancerName</td>
+            <td>@item.phaseName</td>
+            <td>@item.MaterialName</td>
+            <td>@item.Amount</td>
+            <td>@item.TubeName</td>
+          
+            <td>@item.Kota</td>
+            <td>@item.İncoming</td>
+            <td>@item.Going</td>
+            <td>@item.Remainder</td>
+            <td>@item.SponsorName</td>
+           
+        </tr>
+    }
+</table>
